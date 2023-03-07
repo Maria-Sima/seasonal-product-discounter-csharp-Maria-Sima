@@ -16,11 +16,19 @@ public static class SeasonExtensions
 
     public static Season Shift(this Season season, int shift)
     {
-        return 0;
+        int seasonval = (int)season;
+        int newSeasonValue = (seasonval + shift) % 4;
+        Season newseason = (Season)newSeasonValue;
+        return newseason;
     }
 
     public static bool Contains(this Season season, DateTime date)
     {
-        return false;
+        Month[] months = SeasonsToMonths[season];
+        int month = date.Month;
+
+        
+        
+        return months.Any(m=>(int)m==month);
     }
 }

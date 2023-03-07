@@ -52,7 +52,7 @@ public class SeasonalProductDiscounterUi
 
     private void PrintOffers(DateTime date)
     {
-        var discounted = GetOffers(date);
+        List<Offer> discounted = GetOffers(date);
         PrintEnumerable(discounted);
     }
 

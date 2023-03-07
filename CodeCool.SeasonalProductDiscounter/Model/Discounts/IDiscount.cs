@@ -2,11 +2,9 @@
 
 namespace CodeCool.SeasonalProductDiscounter.Model.Discounts;
 
-public interface IDiscount
+public abstract class IDiscount
 {
-    bool Accepts(Product product, DateTime date);
-
-    string Name { get; }
-
-    int Rate { get; }
+    public abstract bool Accepts(Product product, DateTime date);
+    public virtual string Name { get; }
+    public virtual int Rate { get; }
 }
